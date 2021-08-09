@@ -1,0 +1,11 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "b",
+  "main": "c",
+  "scripts": {
+    "test": ""
+  },
+  "author": "zwx",
+  "license": "MIT"
+}

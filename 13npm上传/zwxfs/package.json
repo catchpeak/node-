@@ -1,0 +1,15 @@
+{
+  "name": "zwxfs",
+  "version": "0.1.0",
+  "description": "将fs模块封装为promise",
+  "main": "zwxfs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fs",
+    "promise"
+  ],
+  "author": "zwx",
+  "license": "ISC"
+}

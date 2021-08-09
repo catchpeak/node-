@@ -1,0 +1,162 @@
+hello world --zwxconst fs = require('fs');
+//读写文件，同步和异步接口
+
+
+//同步
+//var fd = fs.openSync('hello.txt','r')
+////var content = fs.readSync(fd,buf,0,20,0)
+//var content = fs.readFileSync('hello.txt',{flag: 'r',encoding: 'utf-8'})
+//console.log(content)
+
+
+//异步
+fs.readFile('hello.txt',{flag: 'r',encoding: 'utf-8'},function(err,data){
+	if(err){
+		console.log(err)
+	}else{
+		console.log(data)
+	}
+})
+
+function fsRead(path){
+	return new Promise(function(resolve,reject){
+		fs.readFile(path,{flag: 'r',encoding: 'utf-8'},function(err,data){
+			if(err){
+				reject(err)
+			}else{
+				resolve(data)
+			}
+		})
+	})
+}
+var w1 = fsRead('hei.txt')
+w1.then((res)=>{
+	console.log(res)
+})
+const fs = require("fs");
+//fs.writeFile('test.txt','晚饭吃什么',{flag: 'a', encoding: 'utf-8'},function(err){
+//	if(err){
+//		console.log(err)
+//	}else{
+//		console.log('写入成功')
+//	}
+//})
+
+function writefs(path,content){
+	return new Promise(function(resolve,reject){
+		fs.writeFile(path,content,{flag: 'a', encoding: 'utf-8'},function(err){
+			if(err){
+				reject(err)
+			}else{
+				resolve(err)
+			}
+		})
+	})
+}
+async function writelist(){
+	await writefs('test.txt','吃吧\n')
+	await writefs('test.txt','吃什么\n')
+	await writefs('test.txt','吃肉\n')
+}
+writelist()
+//1.数组不能进行二进制数据操作
+//2.数字不像java,python效率高
+//3。buffer在内存空间开票出固定大小的内容
+
+var str = 'helloworld'
+let buf = Buffer.from(str)
+console.log(buf)
+
+//输出内容
+console.log(buf.toString())
+
+//开辟一个空的
+let buf1 = Buffer.alloc(10)
+buf1[0] = 10
+console.log(buf1)
+
+let buf2 = Buffer.allocUnsafe(10)
+console.log(buf2)晚饭吃什么吃吧
+吃什么
+吃肉
+这是第二个文件//1.数组不能进行二进制数据操作
+//2.数字不像java,python效率高
+//3。buffer在内存空间开票出固定大小的内容
+
+var str = 'helloworld'
+let buf = Buffer.from(str)
+console.log(buf)
+
+//输出内容
+console.log(buf.toString())
+
+//开辟一个空的
+let buf1 = Buffer.alloc(10)
+buf1[0] = 10
+console.log(buf1)
+
+let buf2 = Buffer.allocUnsafe(10)
+console.log(buf2)hello world --zwxconst fs = require('fs');
+//读写文件，同步和异步接口
+
+
+//同步
+//var fd = fs.openSync('hello.txt','r')
+////var content = fs.readSync(fd,buf,0,20,0)
+//var content = fs.readFileSync('hello.txt',{flag: 'r',encoding: 'utf-8'})
+//console.log(content)
+
+
+//异步
+fs.readFile('hello.txt',{flag: 'r',encoding: 'utf-8'},function(err,data){
+	if(err){
+		console.log(err)
+	}else{
+		console.log(data)
+	}
+})
+
+function fsRead(path){
+	return new Promise(function(resolve,reject){
+		fs.readFile(path,{flag: 'r',encoding: 'utf-8'},function(err,data){
+			if(err){
+				reject(err)
+			}else{
+				resolve(data)
+			}
+		})
+	})
+}
+var w1 = fsRead('hei.txt')
+w1.then((res)=>{
+	console.log(res)
+})
+晚饭吃什么吃吧
+吃什么
+吃肉
+这是第二个文件const fs = require("fs");
+//fs.writeFile('test.txt','晚饭吃什么',{flag: 'a', encoding: 'utf-8'},function(err){
+//	if(err){
+//		console.log(err)
+//	}else{
+//		console.log('写入成功')
+//	}
+//})
+
+function writefs(path,content){
+	return new Promise(function(resolve,reject){
+		fs.writeFile(path,content,{flag: 'a', encoding: 'utf-8'},function(err){
+			if(err){
+				reject(err)
+			}else{
+				resolve(err)
+			}
+		})
+	})
+}
+async function writelist(){
+	await writefs('test.txt','吃吧\n')
+	await writefs('test.txt','吃什么\n')
+	await writefs('test.txt','吃肉\n')
+}
+writelist()
